@@ -437,7 +437,7 @@ function ContactModule() {
             >
                 <p className="font-mono text-sm text-text-muted">
                     © {new Date().getFullYear()} {getText(common.name, language)}.
-                    <span className="text-neon-blue"> Impact.Lab</span>
+                    <span className="text-neon-blue"> Abdelrahman Abuzaid</span>
                 </p>
                 <p className="text-xs text-text-muted mt-2">
                     {getText(common.tagline, language)}

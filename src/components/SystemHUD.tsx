@@ -147,7 +147,9 @@ const MobileMenu = memo(function MobileMenu({ isOpen, onClose, activeSection, on
                         <div className="flex flex-col h-full p-6">
                             {/* Header */}
                             <div className="flex items-center justify-between mb-8">
-                                <span className="font-mono text-neon-blue text-sm">Impact.Lab</span>
+                                <span className="font-mono text-neon-blue text-sm">
+                                    {language === 'ar' ? 'عبد الرحمن أبو زيد' : 'Abdelrahman Abuzaid'}
+                                </span>
                                 <button
                                     onClick={onClose}
                                     className="p-2 hover:bg-white/10 rounded-lg transition-colors"
@@ -307,7 +309,9 @@ function SystemHUD() {
                     <Menu className="w-6 h-6" />
                 </button>
 
-                <div className="font-mono text-neon-blue text-sm">Impact.Lab</div>
+                <div className="font-mono text-neon-blue text-sm">
+                    {language === 'ar' ? 'عبد الرحمن أبو زيد' : 'Abdelrahman Abuzaid'}
+                </div>
 
                 <button
                     onClick={toggleLanguage}
