@@ -205,14 +205,14 @@ const MetricCard = memo(function MetricCard({
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay, type: 'spring' }}
-            className="bg-surface/50 backdrop-blur-sm border border-white/5 rounded-xl p-4 md:p-6 hover:border-neon-blue/30 transition-colors"
+            className="bg-surface/50 backdrop-blur-sm border border-border-color rounded-xl p-4 md:p-6 hover:border-neon-blue/30 transition-colors"
         >
             <div className="flex items-start gap-3">
                 <div className="p-2 bg-neon-blue/10 rounded-lg text-neon-blue">
                     {icon}
                 </div>
                 <div>
-                    <div className="text-2xl md:text-3xl font-bold text-white mb-1">
+                    <div className="text-2xl md:text-3xl font-bold text-text-primary mb-1">
                         {typeof value === 'number' ? <AnimatedCounter value={value} suffix={suffix} /> : value}
                     </div>
                     <div className="text-sm text-text-muted">{label}</div>
@@ -239,11 +239,11 @@ const RoleCard = memo(function RoleCard({ role, index }: RoleCardProps) {
             initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: index * 0.2, type: 'spring' }}
-            className="bg-surface/30 backdrop-blur-sm border border-white/5 rounded-xl p-6 hover:border-neon-green/30 transition-all group"
+            className="bg-surface/30 backdrop-blur-sm border border-border-color rounded-xl p-6 hover:border-neon-green/30 transition-all group"
         >
             <div className="flex items-start justify-between mb-4">
                 <div>
-                    <h3 className="text-lg font-semibold text-white group-hover:text-neon-green transition-colors">
+                    <h3 className="text-lg font-semibold text-text-primary group-hover:text-neon-green transition-colors">
                         {getText(role.organization, language)}
                     </h3>
                     <p className="text-sm text-neon-blue">{getText(role.role, language)}</p>

@@ -128,7 +128,7 @@ const CourseTag = memo(function CourseTag({ course, index }: CourseTagProps) {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ delay: index * 0.05, type: 'spring' }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-surface border border-white/10 rounded-lg font-mono text-sm hover:border-neon-purple/50 hover:text-neon-purple transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-surface border border-border-color rounded-lg font-mono text-sm hover:border-neon-purple/50 hover:text-neon-purple transition-colors"
         >
             <Cpu className="w-4 h-4 text-neon-purple/70" />
             {getText(course.name, language)}
@@ -153,7 +153,7 @@ const SkillCard = memo(function SkillCard({ skill, index }: SkillCardProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: index * 0.1, type: 'spring' }}
-            className="group bg-surface/30 border border-white/5 rounded-xl p-4 hover:border-signal-amber/30 transition-all"
+            className="group bg-surface/30 border border-border-color rounded-xl p-4 hover:border-signal-amber/30 transition-all"
         >
             <div className="flex items-center gap-3">
                 <div className="p-2 bg-signal-amber/10 rounded-lg text-signal-amber group-hover:scale-110 transition-transform">

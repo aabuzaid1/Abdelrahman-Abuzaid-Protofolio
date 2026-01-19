@@ -99,7 +99,7 @@ const PhotoCard = memo(function PhotoCard({ photo, index, onClick }: PhotoCardPr
                 whileHover={{ y: 0, opacity: 1 }}
                 className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300"
             >
-                <p className="text-white font-medium text-sm md:text-base">
+                <p className="text-text-primary font-medium text-sm md:text-base">
                     {language === 'ar' ? photo.ar : photo.en}
                 </p>
             </motion.div>
@@ -138,7 +138,7 @@ const Lightbox = memo(function Lightbox({ photo, onClose, onPrev, onNext }: Ligh
                 onClick={onClose}
                 className="absolute top-6 right-6 p-3 bg-surface/50 hover:bg-surface rounded-full transition-colors z-50"
             >
-                <X className="w-6 h-6 text-white" />
+                <X className="w-6 h-6 text-text-primary" />
             </button>
 
             {/* Navigation buttons */}
@@ -146,14 +146,14 @@ const Lightbox = memo(function Lightbox({ photo, onClose, onPrev, onNext }: Ligh
                 onClick={(e) => { e.stopPropagation(); onPrev(); }}
                 className="absolute left-4 md:left-8 p-3 bg-surface/50 hover:bg-neon-blue/50 rounded-full transition-colors z-50"
             >
-                <ChevronLeft className="w-6 h-6 text-white" />
+                <ChevronLeft className="w-6 h-6 text-text-primary" />
             </button>
 
             <button
                 onClick={(e) => { e.stopPropagation(); onNext(); }}
                 className="absolute right-4 md:right-8 p-3 bg-surface/50 hover:bg-neon-blue/50 rounded-full transition-colors z-50"
             >
-                <ChevronRight className="w-6 h-6 text-white" />
+                <ChevronRight className="w-6 h-6 text-text-primary" />
             </button>
 
             {/* Image */}
@@ -175,7 +175,7 @@ const Lightbox = memo(function Lightbox({ photo, onClose, onPrev, onNext }: Ligh
 
                 {/* Caption */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-carbon to-transparent rounded-b-2xl">
-                    <p className="text-white text-lg md:text-xl font-medium text-center">
+                    <p className="text-text-primary text-lg md:text-xl font-medium text-center">
                         {language === 'ar' ? photo.ar : photo.en}
                     </p>
                 </div>
@@ -253,7 +253,7 @@ function PhotoGallery() {
                             onClick={() => setActiveCategory(cat.id)}
                             className={`flex items-center gap-2 px-4 py-2 rounded-full font-medium transition-all ${activeCategory === cat.id
                                 ? 'bg-neon-blue text-carbon'
-                                : 'bg-surface/50 text-text-secondary hover:bg-surface hover:text-white border border-white/10'
+                                : 'bg-surface/50 text-text-secondary hover:bg-surface hover:text-text-primary border border-border-color'
                                 }`}
                         >
                             <Icon className="w-4 h-4" />
@@ -287,7 +287,7 @@ function PhotoGallery() {
                 viewport={{ once: true }}
                 className="mt-16 max-w-4xl mx-auto"
             >
-                <div className="bg-gradient-to-r from-neon-blue/10 via-neon-purple/10 to-neon-green/10 border border-white/10 rounded-2xl p-8 backdrop-blur-sm">
+                <div className="bg-gradient-to-r from-neon-blue/10 via-neon-purple/10 to-neon-green/10 border border-border-color rounded-2xl p-8 backdrop-blur-sm">
                     <div className="grid grid-cols-3 gap-8 text-center">
                         <div>
                             <div className="text-3xl md:text-4xl font-bold text-neon-blue mb-2">200+</div>

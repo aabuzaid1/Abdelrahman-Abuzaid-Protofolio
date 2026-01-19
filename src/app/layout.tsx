@@ -56,8 +56,11 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#050505',
-  colorScheme: 'dark',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#f8f9fa' },
+    { media: '(prefers-color-scheme: dark)', color: '#050505' },
+  ],
+  colorScheme: 'dark light',
 };
 
 export default function RootLayout({
@@ -75,7 +78,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className="bg-carbon text-white antialiased">
+      <body className="bg-carbon antialiased" style={{ color: 'var(--text-primary)' }}>
         <LanguageProvider>
           {children}
           {/* Noise overlay */}

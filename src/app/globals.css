@@ -11,35 +11,60 @@
 /* CSS VARIABLES */
 /* ============================================ */
 :root {
-  /* Core Colors */
-  --carbon: #050505;
-  --carbon-light: #0a0a0a;
-  --carbon-lighter: #121212;
-  --surface: #1a1a1a;
-  --surface-elevated: #222222;
+  /* Core Colors - Dark Mode (Default) */
+  --carbon: #050508;
+  --carbon-light: #0c0c10;
+  --carbon-lighter: #141418;
+  --surface: #1c1c22;
+  --surface-elevated: #26262e;
+  --surface-hover: #32323c;
 
-  /* Neon Accents */
+  /* Premium Gradients - Dark Mode */
+  --gradient-primary: linear-gradient(135deg, #0ea5e9 0%, #6366f1 50%, #a855f7 100%);
+  --gradient-surface: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+  --gradient-glow: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.15) 0%, transparent 70%);
+  --gradient-hero: linear-gradient(135deg, rgba(14, 165, 233, 0.08) 0%, rgba(168, 85, 247, 0.08) 100%);
+
+  /* Neon Accents - Premium Dark */
   --neon-blue: #00d4ff;
-  --neon-blue-dim: rgba(0, 212, 255, 0.3);
-  --neon-blue-glow: rgba(0, 212, 255, 0.15);
+  --neon-blue-dim: rgba(0, 212, 255, 0.25);
+  --neon-blue-glow: rgba(0, 212, 255, 0.12);
+  --neon-blue-subtle: rgba(0, 212, 255, 0.06);
 
-  --signal-amber: #ffb800;
-  --signal-amber-dim: rgba(255, 184, 0, 0.3);
+  --signal-amber: #fbbf24;
+  --signal-amber-dim: rgba(251, 191, 36, 0.25);
+  --signal-amber-glow: rgba(251, 191, 36, 0.12);
 
-  --neon-green: #00ff88;
-  --neon-green-dim: rgba(0, 255, 136, 0.3);
+  --neon-green: #34d399;
+  --neon-green-dim: rgba(52, 211, 153, 0.25);
+  --neon-green-glow: rgba(52, 211, 153, 0.12);
 
-  --neon-purple: #a855f7;
-  --neon-purple-dim: rgba(168, 85, 247, 0.3);
+  --neon-purple: #a78bfa;
+  --neon-purple-dim: rgba(167, 139, 250, 0.25);
+  --neon-purple-glow: rgba(167, 139, 250, 0.12);
 
-  /* Text */
-  --text-primary: #ffffff;
-  --text-secondary: #a0a0a0;
-  --text-muted: #666666;
+  /* Text - Dark Mode */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-accent: var(--neon-blue);
+
+  /* Borders & Dividers */
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.15);
+  --divider: rgba(255, 255, 255, 0.04);
+
+  /* Shadows - Dark Mode */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -4px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.7), 0 8px 10px -6px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 40px rgba(0, 212, 255, 0.15), 0 0 80px rgba(0, 212, 255, 0.08);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 
   /* Grid */
-  --grid-color: rgba(255, 255, 255, 0.03);
-  --grid-active: rgba(0, 212, 255, 0.08);
+  --grid-color: rgba(255, 255, 255, 0.02);
+  --grid-active: rgba(0, 212, 255, 0.06);
 
   /* Fonts */
   --font-heading: 'Space Grotesk', sans-serif;
@@ -49,10 +74,97 @@
   /* Spacing */
   --hud-width: 72px;
 
-  /* Transitions */
-  --transition-fast: 150ms ease;
-  --transition-base: 250ms ease;
+  /* Transitions - Smooth & Professional */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Blur Effects */
+  --blur-sm: 4px;
+  --blur-md: 8px;
+  --blur-lg: 16px;
+  --blur-xl: 24px;
+
+  /* Scrollbar Colors */
+  --scrollbar-track: var(--carbon-light);
+  --scrollbar-thumb: var(--surface-elevated);
+  --scrollbar-thumb-hover: var(--surface-hover);
+
+  /* Glass Effect */
+  --glass-bg: rgba(28, 28, 34, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+/* ============================================ */
+/* LIGHT MODE - System Preference */
+/* ============================================ */
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Core Colors - Light Mode */
+    --carbon: #fafbfc;
+    --carbon-light: #f4f6f8;
+    --carbon-lighter: #edf0f3;
+    --surface: #ffffff;
+    --surface-elevated: #ffffff;
+    --surface-hover: #f8f9fa;
+
+    /* Premium Gradients - Light Mode */
+    --gradient-primary: linear-gradient(135deg, #0284c7 0%, #4f46e5 50%, #7c3aed 100%);
+    --gradient-surface: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(248, 250, 252, 1) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, rgba(14, 165, 233, 0.1) 0%, transparent 70%);
+    --gradient-hero: linear-gradient(135deg, rgba(14, 165, 233, 0.04) 0%, rgba(124, 58, 237, 0.04) 100%);
+
+    /* Accent Colors - Vibrant Light Mode */
+    --neon-blue: #0284c7;
+    --neon-blue-dim: rgba(2, 132, 199, 0.15);
+    --neon-blue-glow: rgba(2, 132, 199, 0.08);
+    --neon-blue-subtle: rgba(2, 132, 199, 0.04);
+
+    --signal-amber: #d97706;
+    --signal-amber-dim: rgba(217, 119, 6, 0.15);
+    --signal-amber-glow: rgba(217, 119, 6, 0.08);
+
+    --neon-green: #059669;
+    --neon-green-dim: rgba(5, 150, 105, 0.15);
+    --neon-green-glow: rgba(5, 150, 105, 0.08);
+
+    --neon-purple: #7c3aed;
+    --neon-purple-dim: rgba(124, 58, 237, 0.15);
+    --neon-purple-glow: rgba(124, 58, 237, 0.08);
+
+    /* Text - Light Mode */
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
+    --text-accent: var(--neon-blue);
+
+    /* Borders & Dividers */
+    --border-color: rgba(0, 0, 0, 0.08);
+    --border-hover: rgba(0, 0, 0, 0.15);
+    --divider: rgba(0, 0, 0, 0.06);
+
+    /* Shadows - Light Mode (Soft & Elegant) */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.06);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+    --shadow-glow: 0 0 40px rgba(2, 132, 199, 0.12), 0 0 80px rgba(2, 132, 199, 0.06);
+    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+
+    /* Grid */
+    --grid-color: rgba(0, 0, 0, 0.03);
+    --grid-active: rgba(2, 132, 199, 0.06);
+
+    /* Scrollbar Colors */
+    --scrollbar-track: var(--carbon-light);
+    --scrollbar-thumb: #d1d5db;
+    --scrollbar-thumb-hover: #9ca3af;
+
+    /* Glass Effect */
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(0, 0, 0, 0.06);
+  }
 }
 
 /* ============================================ */
@@ -64,6 +176,7 @@
   --color-carbon-lighter: var(--carbon-lighter);
   --color-surface: var(--surface);
   --color-surface-elevated: var(--surface-elevated);
+  --color-surface-hover: var(--surface-hover);
 
   --color-neon-blue: var(--neon-blue);
   --color-neon-blue-dim: var(--neon-blue-dim);
@@ -73,6 +186,14 @@
 
   --color-background: var(--carbon);
   --color-foreground: var(--text-primary);
+
+  /* Theme-aware colors */
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-border-color: var(--border-color);
+  --color-border-hover: var(--border-hover);
+  --color-divider: var(--divider);
 
   --font-sans: var(--font-heading);
   --font-mono: var(--font-mono);
@@ -84,6 +205,32 @@
 /* ============================================ */
 * {
   box-sizing: border-box;
+}
+
+/* Smooth theme transitions */
+html {
+  scroll-behavior: smooth;
+  transition: background-color var(--transition-slow), color var(--transition-slow);
+}
+
+body {
+  background: var(--carbon);
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color var(--transition-slow), color var(--transition-slow);
+}
+
+/* Apply transitions to all theme-aware elements */
+*,
+*::before,
+*::after {
+  transition-property: background-color, border-color, box-shadow, color, fill, stroke;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html {
@@ -381,25 +528,92 @@ a:focus-visible {
 /* UTILITY CLASSES */
 /* ============================================ */
 .gradient-text {
-  background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .border-glow {
-  border: 1px solid rgba(0, 212, 255, 0.2);
-  background: rgba(0, 212, 255, 0.02);
+  border: 1px solid var(--border-color);
+  background: var(--neon-blue-subtle);
 }
 
 .card-elevated {
   background: var(--surface);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
+  box-shadow: var(--shadow-card);
 }
 
+.card-elevated:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Glass Morphism */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--blur-lg));
+  -webkit-backdrop-filter: blur(var(--blur-lg));
+  border: 1px solid var(--glass-border);
+}
+
+.glass-subtle {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+  border: 1px solid var(--glass-border);
+}
+
+/* Professional Shadows */
+.shadow-premium {
+  box-shadow: var(--shadow-lg);
+}
+
+.shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
+
+/* Gradient Backgrounds */
+.bg-gradient-hero {
+  background: var(--gradient-hero);
+}
+
+.bg-gradient-surface {
+  background: var(--gradient-surface);
+}
+
+/* Theme-aware borders */
+.border-theme {
+  border-color: var(--border-color);
+}
+
+.border-theme-hover:hover {
+  border-color: var(--border-hover);
+}
+
+/* Text utilities */
 .text-balance {
   text-wrap: balance;
+}
+
+.text-accent {
+  color: var(--text-accent);
+}
+
+/* Interactive elements */
+.interactive {
+  transition: all var(--transition-base);
+}
+
+.interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.interactive:active {
+  transform: translateY(0);
 }
 
 /* HUD Panel spacing for content */
@@ -430,4 +644,19 @@ html[dir="rtl"] .main-content {
 ::selection {
   background: var(--neon-blue-dim);
   color: var(--text-primary);
+}
+
+/* ============================================ */
+/* THEME INDICATOR (Optional Debug) */
+/* ============================================ */
+@media (prefers-color-scheme: light) {
+  .theme-indicator::after {
+    content: '☀️ Light Mode';
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .theme-indicator::after {
+    content: '🌙 Dark Mode';
+  }
 }

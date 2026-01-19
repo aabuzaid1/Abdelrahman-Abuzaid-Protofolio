@@ -25,7 +25,7 @@ const TechTag = memo(function TechTag({ name, index }: TechTagProps) {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5 + index * 0.1 }}
-            className="inline-flex items-center gap-1 px-2 py-1 bg-carbon-lighter border border-white/10 rounded text-xs font-mono text-neon-blue"
+            className="inline-flex items-center gap-1 px-2 py-1 bg-carbon-lighter border border-border-color rounded text-xs font-mono text-neon-blue"
         >
             <span className="w-1 h-1 bg-neon-green rounded-full" />
             {name}
@@ -53,7 +53,7 @@ const ProjectCard = memo(function ProjectCard({ project, index }: ProjectCardPro
             className="group relative"
         >
             {/* Blueprint card */}
-            <div className="relative bg-carbon-light border border-white/10 rounded-2xl overflow-hidden hover:border-neon-blue/30 transition-all duration-500">
+            <div className="relative bg-surface border border-border-color rounded-2xl overflow-hidden hover:border-neon-blue/30 transition-all duration-500">
                 {/* Grid overlay for blueprint effect */}
                 <div
                     className="absolute inset-0 opacity-20 group-hover:opacity-10 transition-opacity pointer-events-none"
@@ -82,7 +82,7 @@ const ProjectCard = memo(function ProjectCard({ project, index }: ProjectCardPro
                     ) : (
                         <>
                             {/* Wireframe mockup for projects without image */}
-                            <div className="absolute inset-4 border-2 border-dashed border-white/10 rounded-lg group-hover:border-neon-blue/20 transition-colors">
+                            <div className="absolute inset-4 border-2 border-dashed border-border-color rounded-lg group-hover:border-neon-blue/20 transition-colors">
                                 <div className="absolute top-4 left-4 right-4 h-3 bg-white/5 rounded group-hover:bg-neon-blue/10 transition-colors" />
                                 <div className="absolute top-10 left-4 w-1/3 h-2 bg-white/5 rounded" />
                                 <div className="absolute top-14 left-4 right-4 h-16 bg-white/5 rounded" />
@@ -98,8 +98,8 @@ const ProjectCard = memo(function ProjectCard({ project, index }: ProjectCardPro
                                 whileInView={{ scale: 1, opacity: 1 }}
                                 className="absolute inset-0 flex items-center justify-center"
                             >
-                                <div className="p-6 bg-surface/50 backdrop-blur-sm rounded-2xl border border-white/10 group-hover:border-neon-blue/30 group-hover:scale-110 transition-all duration-500">
-                                    <Layers className="w-10 h-10 text-white/50 group-hover:text-neon-blue transition-colors" />
+                                <div className="p-6 bg-surface/50 backdrop-blur-sm rounded-2xl border border-border-color group-hover:border-neon-blue/30 group-hover:scale-110 transition-all duration-500">
+                                    <Layers className="w-10 h-10 text-text-secondary group-hover:text-neon-blue transition-colors" />
                                 </div>
                             </motion.div>
                         </>
@@ -117,7 +117,7 @@ const ProjectCard = memo(function ProjectCard({ project, index }: ProjectCardPro
                     />
 
                     {/* Blueprint label */}
-                    <div className="absolute top-4 right-4 font-mono text-xs text-white/50 bg-carbon/50 px-2 py-1 rounded backdrop-blur-sm">
+                    <div className="absolute top-4 right-4 font-mono text-xs text-text-muted bg-carbon/50 px-2 py-1 rounded backdrop-blur-sm">
                         PROJ.{String(index + 1).padStart(2, '0')}
                     </div>
                 </div>
@@ -148,7 +148,7 @@ const ProjectCard = memo(function ProjectCard({ project, index }: ProjectCardPro
                                 href={project.repoUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 px-4 py-2 bg-surface hover:bg-surface-elevated border border-white/10 hover:border-white/20 rounded-lg text-sm transition-all group/btn"
+                                className="flex items-center gap-2 px-4 py-2 bg-surface hover:bg-surface-elevated border border-border-color hover:border-border-hover rounded-lg text-sm transition-all group/btn"
                             >
                                 <Github className="w-4 h-4 group-hover/btn:text-neon-blue transition-colors" />
                                 <span>{getText(ui.labels.viewRepo, language)}</span>
@@ -169,7 +169,7 @@ const ProjectCard = memo(function ProjectCard({ project, index }: ProjectCardPro
                 </div>
 
                 {/* Corner accents */}
-                <svg className="absolute top-0 left-0 w-6 h-6 text-white/10 pointer-events-none" viewBox="0 0 24 24">
+                <svg className="absolute top-0 left-0 w-6 h-6 text-text-muted/20 pointer-events-none" viewBox="0 0 24 24">
                     <path d="M0 0 L24 0 L0 24" fill="currentColor" />
                 </svg>
                 <svg className="absolute bottom-0 right-0 w-6 h-6 text-white/10 rotate-180 pointer-events-none" viewBox="0 0 24 24">
@@ -218,7 +218,7 @@ function ProjectSchematic() {
                 transition={{ delay: 0.2 }}
                 className="max-w-5xl mx-auto mb-8"
             >
-                <div className="flex items-center gap-4 pb-4 border-b border-white/10">
+                <div className="flex items-center gap-4 pb-4 border-b border-border-color">
                     <Code2 className="w-5 h-5 text-neon-blue" />
                     <span className="font-mono text-sm text-text-muted">
                         {language === 'ar' ? 'مخططات المشاريع' : 'PROJECT_SCHEMATICS'}

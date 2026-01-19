@@ -178,7 +178,7 @@ const MobileMenu = memo(function MobileMenu({ isOpen, onClose, activeSection, on
                             </div>
 
                             {/* Footer */}
-                            <div className="space-y-4 pt-4 border-t border-white/10">
+                            <div className="space-y-4 pt-4 border-t border-border-color">
                                 <TimeDisplay />
                                 <HeartbeatGraph />
 

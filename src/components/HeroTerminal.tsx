@@ -104,7 +104,7 @@ const StatBadge = memo(function StatBadge({ label, value, delay }: StatBadgeProp
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay, type: 'spring', stiffness: 100 }}
-            className="flex items-center gap-2 px-3 py-1.5 bg-surface/50 border border-white/5 rounded-full font-mono text-xs"
+            className="flex items-center gap-2 px-3 py-1.5 bg-surface/50 border border-border-color rounded-full font-mono text-xs"
         >
             <span className="text-text-muted">{label}:</span>
             <span className="text-neon-blue">{value}</span>
@@ -159,10 +159,10 @@ function HeroTerminal() {
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="bg-carbon-light/50 backdrop-blur-sm border border-white/5 rounded-lg p-4 md:p-6 max-w-2xl"
+                    className="bg-surface/80 backdrop-blur-sm border border-border-color rounded-lg p-4 md:p-6 max-w-2xl"
                 >
                     {/* Terminal header */}
-                    <div className="flex items-center gap-2 mb-4 pb-3 border-b border-white/10">
+                    <div className="flex items-center gap-2 mb-4 pb-3 border-b border-border-color">
                         <div className="w-3 h-3 rounded-full bg-red-500/80" />
                         <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
                         <div className="w-3 h-3 rounded-full bg-green-500/80" />
@@ -221,7 +221,7 @@ function HeroTerminal() {
                                 </div>
 
                                 {/* Image container */}
-                                <div className="relative w-44 h-44 md:w-56 md:h-56 lg:w-72 lg:h-72 rounded-full overflow-hidden border-2 border-white/10">
+                                <div className="relative w-44 h-44 md:w-56 md:h-56 lg:w-72 lg:h-72 rounded-full overflow-hidden border-2 border-border-color">
                                     <Image
                                         src="/profile.jpg"
                                         alt={language === 'ar' ? 'عبدالرحمن أبوزيد' : 'Abdelrahman Abuzaid'}
@@ -345,7 +345,7 @@ function HeroTerminal() {
 
                                 <button
                                     onClick={scrollToContact}
-                                    className="px-6 py-3 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/5 hover:border-neon-blue transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-neon-blue focus-visible:ring-offset-2 focus-visible:ring-offset-carbon"
+                                    className="px-6 py-3 border border-border-color text-text-primary font-semibold rounded-lg hover:bg-surface-elevated hover:border-neon-blue transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-neon-blue focus-visible:ring-offset-2 focus-visible:ring-offset-carbon"
                                 >
                                     {getText(ui.cta.initiateContact, language)}
                                 </button>

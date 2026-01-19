@@ -36,7 +36,7 @@ const InputField = memo(function InputField({
     isTextarea = false
 }: InputFieldProps) {
     const inputClasses = clsx(
-        'w-full bg-carbon-light border border-white/10 rounded-lg px-4 py-3 text-white placeholder-text-muted',
+        'w-full bg-surface border border-border-color rounded-lg px-4 py-3 text-text-primary placeholder-text-muted',
         'focus:outline-none focus:border-neon-blue focus:ring-1 focus:ring-neon-blue/50',
         'transition-all duration-200'
     );
@@ -92,7 +92,7 @@ const InfoCard = memo(function InfoCard({ icon, label, value, delay }: InfoCardP
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay, type: 'spring' }}
-            className="flex items-start gap-3 p-4 bg-surface/30 border border-white/5 rounded-xl hover:border-neon-blue/20 transition-colors"
+            className="flex items-start gap-3 p-4 bg-surface/30 border border-border-color rounded-xl hover:border-neon-blue/20 transition-colors"
         >
             <div className="p-2 bg-neon-blue/10 rounded-lg text-neon-blue flex-shrink-0">
                 {icon}
@@ -123,7 +123,7 @@ const SocialLink = memo(function SocialLink({ icon, label, href, delay }: Social
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center justify-center w-12 h-12 bg-surface border border-white/10 rounded-xl hover:border-neon-blue hover:bg-neon-blue/10 transition-all"
+            className="group flex items-center justify-center w-12 h-12 bg-surface border border-border-color rounded-xl hover:border-neon-blue hover:bg-neon-blue/10 transition-all"
             aria-label={label}
         >
             <div className="text-text-secondary group-hover:text-neon-blue transition-colors">
@@ -217,9 +217,9 @@ function ContactModule() {
                     viewport={{ once: true }}
                     className="relative"
                 >
-                    <div className="bg-carbon-light/50 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-8">
+                    <div className="bg-surface/80 backdrop-blur-sm border border-border-color rounded-2xl p-6 md:p-8">
                         {/* Terminal header */}
-                        <div className="flex items-center gap-2 mb-6 pb-4 border-b border-white/10">
+                        <div className="flex items-center gap-2 mb-6 pb-4 border-b border-border-color">
                             <div className="w-3 h-3 rounded-full bg-neon-green" />
                             <span className="font-mono text-xs text-text-muted">
                                 transmission_module.active
@@ -372,27 +372,27 @@ function ContactModule() {
                         <div className="grid grid-cols-2 gap-3">
                             <a
                                 href="mailto:abdelrahmanabuzaid311@gmail.com"
-                                className="flex items-center gap-3 p-3 bg-surface/50 border border-white/10 rounded-xl hover:border-neon-blue hover:bg-neon-blue/10 transition-all group"
+                                className="flex items-center gap-3 p-3 bg-surface/50 border border-border-color rounded-xl hover:border-neon-blue hover:bg-neon-blue/10 transition-all group"
                             >
                                 <div className="p-2 bg-red-500/20 rounded-lg">
                                     <Mail className="w-4 h-4 text-red-400" />
                                 </div>
                                 <div className="text-sm">
                                     <div className="text-text-muted text-xs">{language === 'ar' ? 'البريد' : 'Email'}</div>
-                                    <div className="text-white group-hover:text-neon-blue transition-colors truncate text-xs">abdelrahman...@gmail.com</div>
+                                    <div className="text-text-primary group-hover:text-neon-blue transition-colors truncate text-xs">abdelrahman...@gmail.com</div>
                                 </div>
                             </a>
 
                             <a
                                 href="tel:+962790796457"
-                                className="flex items-center gap-3 p-3 bg-surface/50 border border-white/10 rounded-xl hover:border-neon-green hover:bg-neon-green/10 transition-all group"
+                                className="flex items-center gap-3 p-3 bg-surface/50 border border-border-color rounded-xl hover:border-neon-green hover:bg-neon-green/10 transition-all group"
                             >
                                 <div className="p-2 bg-neon-green/20 rounded-lg">
                                     <Phone className="w-4 h-4 text-neon-green" />
                                 </div>
                                 <div className="text-sm">
                                     <div className="text-text-muted text-xs">{language === 'ar' ? 'الهاتف' : 'Phone'}</div>
-                                    <div className="text-white group-hover:text-neon-green transition-colors" dir="ltr">+962 790796457</div>
+                                    <div className="text-text-primary group-hover:text-neon-green transition-colors" dir="ltr">+962 790796457</div>
                                 </div>
                             </a>
                         </div>
@@ -433,7 +433,7 @@ function ContactModule() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className="mt-20 pt-8 border-t border-white/10 text-center"
+                className="mt-20 pt-8 border-t border-border-color text-center"
             >
                 <p className="font-mono text-sm text-text-muted">
                     © {new Date().getFullYear()} {getText(common.name, language)}.
