@@ -369,28 +369,28 @@ function ContactModule() {
                         </div>
 
                         {/* Contact buttons */}
-                        <div className="grid grid-cols-2 gap-3">
+                        <div className="space-y-3">
                             <a
                                 href="mailto:abdelrahmanabuzaid311@gmail.com"
-                                className="flex items-center gap-3 p-3 bg-surface/50 border border-border-color rounded-xl hover:border-neon-blue hover:bg-neon-blue/10 transition-all group"
+                                className="flex items-center gap-3 p-3 bg-surface/50 border border-border-color rounded-xl hover:border-neon-blue hover:bg-neon-blue/10 transition-all group w-full"
                             >
-                                <div className="p-2 bg-red-500/20 rounded-lg">
+                                <div className="p-2 bg-red-500/20 rounded-lg flex-shrink-0">
                                     <Mail className="w-4 h-4 text-red-400" />
                                 </div>
-                                <div className="text-sm">
+                                <div className="text-sm min-w-0 flex-1">
                                     <div className="text-text-muted text-xs">{language === 'ar' ? 'البريد' : 'Email'}</div>
-                                    <div className="text-text-primary group-hover:text-neon-blue transition-colors truncate text-xs">abdelrahman...@gmail.com</div>
+                                    <div className="text-text-primary group-hover:text-neon-blue transition-colors truncate text-xs">abdelrahmanabuzaid311@gmail.com</div>
                                 </div>
                             </a>
 
                             <a
                                 href="tel:+962790796457"
-                                className="flex items-center gap-3 p-3 bg-surface/50 border border-border-color rounded-xl hover:border-neon-green hover:bg-neon-green/10 transition-all group"
+                                className="flex items-center gap-3 p-3 bg-surface/50 border border-border-color rounded-xl hover:border-neon-green hover:bg-neon-green/10 transition-all group w-full"
                             >
-                                <div className="p-2 bg-neon-green/20 rounded-lg">
+                                <div className="p-2 bg-neon-green/20 rounded-lg flex-shrink-0">
                                     <Phone className="w-4 h-4 text-neon-green" />
                                 </div>
-                                <div className="text-sm">
+                                <div className="text-sm min-w-0 flex-1">
                                     <div className="text-text-muted text-xs">{language === 'ar' ? 'الهاتف' : 'Phone'}</div>
                                     <div className="text-text-primary group-hover:text-neon-green transition-colors" dir="ltr">+962 790796457</div>
                                 </div>
