@@ -92,14 +92,14 @@ const InfoCard = memo(function InfoCard({ icon, label, value, delay }: InfoCardP
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay, type: 'spring' }}
-            className="flex items-start gap-3 p-4 bg-surface/30 border border-border-color rounded-xl hover:border-neon-blue/20 transition-colors"
+            className="flex items-start gap-3 p-4 bg-surface/30 border border-border-color rounded-xl hover:border-neon-blue/20 transition-colors min-w-0"
         >
             <div className="p-2 bg-neon-blue/10 rounded-lg text-neon-blue flex-shrink-0">
                 {icon}
             </div>
-            <div>
+            <div className="min-w-0 flex-1">
                 <div className="text-xs text-text-muted mb-1">{label}</div>
-                <div className="text-sm font-medium">{value}</div>
+                <div className="text-sm font-medium truncate">{value}</div>
             </div>
         </motion.div>
     );
