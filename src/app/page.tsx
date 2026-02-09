@@ -26,7 +26,7 @@ const ContactModule = dynamic(() => import('@/components/ContactModule'), {
   loading: () => <SectionLoader />,
 });
 
-const PhotoGallery = dynamic(() => import('@/components/PhotoGallery'), {
+const DesignPortfolio = dynamic(() => import('@/components/DesignPortfolio'), {
   loading: () => <SectionLoader />,
 });
 
@@ -60,8 +60,8 @@ export default function Home() {
         {/* Impact Metrics Section */}
         <ImpactVisualizer />
 
-        {/* Photo Gallery Section */}
-        <PhotoGallery />
+        {/* Design Portfolio Section */}
+        <DesignPortfolio />
 
         {/* Projects Section */}
         <ProjectSchematic />

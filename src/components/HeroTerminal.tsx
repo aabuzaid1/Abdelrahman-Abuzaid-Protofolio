@@ -319,8 +319,13 @@ function HeroTerminal() {
                                     delay={0.8}
                                 />
                                 <StatBadge
-                                    label={language === 'ar' ? 'منذ' : 'Since'}
-                                    value={`${common.volunteeringStart}`}
+                                    label={language === 'ar' ? 'أدوات AI' : 'AI Tools'}
+                                    value={`5+`}
+                                    delay={0.85}
+                                />
+                                <StatBadge
+                                    label={language === 'ar' ? 'تصاميم' : 'Designs'}
+                                    value={`20+`}
                                     delay={0.9}
                                 />
                             </motion.div>
