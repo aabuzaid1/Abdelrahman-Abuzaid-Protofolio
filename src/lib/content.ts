@@ -156,6 +156,22 @@ export const courses: Course[] = [
 
 export const projects: Project[] = [
   {
+    id: 'mutatawi',
+    title: {
+      en: 'Mutatawi Volunteering Platform',
+      ar: 'منصة متطوع'
+    },
+    description: {
+      en: 'The premier volunteering platform in the region empowering individuals to make a real difference in their community.',
+      ar: 'منصة التطوع الأولى في المنطقة، لتمكين الأفراد من صنع فرق حقيقي في مجتمعهم.'
+    },
+    tech: ['Next.js', 'Firebase', 'Tailwind CSS', 'Framer Motion'],
+    gradient: 'from-blue-600 to-indigo-700',
+    repoUrl: 'https://github.com/aabuzaid1/Mutatawi',
+    liveUrl: 'https://mutatawi.vercel.app/',
+    image: '/mutatawi.jpg.png'
+  },
+  {
     id: 'shabab-alkhair',
     title: {
       en: 'Shabab Al-Khair Volunteer Team Website',
